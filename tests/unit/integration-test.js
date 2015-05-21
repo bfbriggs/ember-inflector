@@ -24,11 +24,12 @@ test("pluralize", function(assert) {
 });
 
 test("singularize", function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   assert.equal(Ember.String.singularize('words'),  'word');
   assert.equal(Ember.String.singularize('oxen'),   'ox');
   assert.equal(Ember.String.singularize('octopi'), 'octopus');
+  assert.equal(Ember.String.singularize('in-common-man'), 'in-common-man');
 });
 
 module("ember-inflector.integration - " + (isHTMLBars ? "HTMLBars" : "Handlebars") + " Helpers", {
@@ -55,6 +56,7 @@ module("ember-inflector.integration - " + (isHTMLBars ? "HTMLBars" : "Handlebars
 
       appendView(view);
       text = $("#qunit-fixture").text();
+      console.log(text);
     });
   },
 
